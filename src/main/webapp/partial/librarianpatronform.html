@@ -1,0 +1,30 @@
+<html>
+<a href='#/checkout'><img src='resources/checkout.jpg' alt='checkout'/></a>
+<a href='#/checkin'><img src='resources/checkin.jpg' alt='checkin'/></a>
+<a href='#/librarian/patron'><img src='resources/patron.jpg' alt='add patron'/></a>
+<a href='#/librarian/media'><img src='resources/media.jpg' alt='add media'/></a>
+<a href='#/librarian/record'><img src='resources/record.jpg' alt='patron record'/></a>
+<div class="span12">
+    <form novalidate ng-controller="patronFormController" ng-init="getPatron()">
+        <table>
+            <thead>
+            <tr ng-repeat="head in heading ">
+                <td>{{head.text}}</td>
+                <td><input type="text" ng-model="patron[head.name]" ng-disabled="head.name == 'id'"></td>
+            </thead>
+            <tbody>
+            </tr>
+            <tr>
+                <td onclick='location.href="#/librarian/patron"'>
+                    <button ng-click="save()">Save</button>
+                </td>
+                <td>
+                    <button ng-click="reset()">New</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+</html>

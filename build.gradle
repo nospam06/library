@@ -1,0 +1,20 @@
+group 'com.ohmyapp'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'war'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    runtime 'mysql:mysql-connector-java:5.1.37'
+    compile 'org.hibernate:hibernate-entitymanager:5.2.2.Final'
+    compile 'log4j:log4j:1.2.17'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'commons-beanutils:commons-beanutils:1.9.2'
+    providedCompile 'javax.servlet:servlet-api:2.5'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+war.archiveName = "library.war"
